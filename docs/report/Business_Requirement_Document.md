@@ -1,6 +1,6 @@
 # Business Requirement Document
 
-**Project:** Enterprise Energy Data Platform (EEDP)
+**Project:** Enterprise Energy Data Platform (EEDP)\
 **Team:**
 ```text
 Perseus Mistry
