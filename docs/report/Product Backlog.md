@@ -11,18 +11,18 @@
 | PB-07 | Data Sources          | Identify enterprise data sources                  | High     | Sprint 0 | Done        |
 | PB-08 | Data Sources          | Document data sources                             | High     | Sprint 1 | In Progress |
 | PB-09 | Data Understanding    | Analyze source data                               | High     | Sprint 1 | In Progress |
-| PB-10 | Data Understanding    | Perform data profiling                            | High     | Sprint 1 | In Progress |
-| PB-11 | Data Understanding    | Assess data quality                               | High     | Sprint 1 | In Progress |
+| PB-10 | Data Understanding    | Perform data profiling                            | High     | Sprint 1 | Done        |
+| PB-11 | Data Understanding    | Assess data quality                               | High     | Sprint 1 | Done        |
 | PB-12 | Architecture          | Design overall data architecture                  | High     | Sprint 1 | In Progress |
-| PB-13 | ETL Design            | Design ETL workflow                               | High     | Sprint 1 | In Progress |
-| PB-14 | Data Ingestion        | Extract data from enterprise sources              | High     | Sprint 2 | Not Started |
-| PB-15 | Data Cleaning         | Clean source data                                 | High     | Sprint 2 | Not Started |
-| PB-16 | Data Transformation   | Transform source data                             | High     | Sprint 2 | Not Started |
-| PB-17 | Data Integration      | Integrate data from multiple sources              | High     | Sprint 2 | Not Started |
-| PB-18 | Data Warehouse        | Design dimensional data model                     | High     | Sprint 2 | Not Started |
-| PB-19 | Data Warehouse        | Create dimension tables                           | High     | Sprint 2 | Not Started |
-| PB-20 | Data Warehouse        | Create fact tables                                | High     | Sprint 2 | Not Started |
-| PB-21 | ETL Development       | Develop ETL pipelines using Pentaho               | High     | Sprint 2 | Not Started |
+| PB-13 | ETL Design            | Design ETL workflow                               | High     | Sprint 1 | Done        |
+| PB-14 | Data Ingestion        | Extract data from enterprise sources              | High     | Sprint 2 | Done        |
+| PB-15 | Data Cleaning         | Clean source data                                 | High     | Sprint 2 | In Progress |
+| PB-16 | Data Transformation   | Transform source data                             | High     | Sprint 2 | In Progress |
+| PB-17 | Data Integration      | Integrate data from multiple sources              | High     | Sprint 2 | Done        |
+| PB-18 | Data Warehouse        | Design dimensional data model                     | High     | Sprint 2 | In Progress |
+| PB-19 | Data Warehouse        | Create dimension tables                           | High     | Sprint 2 | Done        |
+| PB-20 | Data Warehouse        | Create fact tables                                | High     | Sprint 2 | Done        |
+| PB-21 | ETL Development       | Develop ETL pipelines using Pentaho               | High     | Sprint 2 | Done        |
 | PB-22 | Data Loading          | Load transformed data into data warehouse         | High     | Sprint 3 | Not Started |
 | PB-23 | Data Validation       | Validate loaded data                              | High     | Sprint 3 | Not Started |
 | PB-24 | Data Quality          | Implement data-quality checks                     | High     | Sprint 3 | Not Started |

@@ -86,3 +86,48 @@
 * Sprint 1 Demonstration
 
 ---
+
+# Sprint 2 — Data Profiling & Database / Data Warehouse
+
+**Sprint Goal:** Profile and assess the quality of the ingested energy and utility data, standardize the datasets, design the enterprise data warehouse using dimensional modelling, and load trusted datasets into PostgreSQL.
+
+| ID    | Backlog Item / Task                                      | Expected Output                 | Priority |
+| ----- | -------------------------------------------------------- | ------------------------------- | -------- |
+| S2-01 | Profile the ingested energy datasets using Python/Pandas | Data Profiling Results          | High     |
+| S2-02 | Analyze missing values in meter and other datasets       | Missing-Value Analysis          | High     |
+| S2-03 | Identify duplicate customer records                      | Duplicate Record Analysis       | High     |
+| S2-04 | Identify invalid sensor data                             | Sensor Data Quality Report      | High     |
+| S2-05 | Identify billing inconsistencies                         | Billing Data Quality Report     | High     |
+| S2-06 | Analyze data types, formats and value ranges             | Data Validation Findings        | Medium   |
+| S2-07 | Define data-quality rules and validation criteria        | Data Quality Rules              | High     |
+| S2-08 | Standardize customer master data                         | Standardized Customer Data      | High     |
+| S2-09 | Standardize asset master data                            | Standardized Asset Data         | High     |
+| S2-10 | Standardize grid master data                             | Standardized Grid Data          | High     |
+| S2-11 | Clean and transform the profiled datasets                | Cleaned and Transformed Data    | High     |
+| S2-12 | Design the enterprise Star Schema                        | Star Schema Design              | High     |
+| S2-13 | Identify required Fact tables                            | Fact Table Design               | High     |
+| S2-14 | Identify required Dimension tables                       | Dimension Table Design          | High     |
+| S2-15 | Create PostgreSQL Data Warehouse tables                  | Data Warehouse Schema           | High     |
+| S2-16 | Develop Pentaho transformations for warehouse loading    | Warehouse ETL Pipelines         | High     |
+| S2-17 | Load transformed data into Fact and Dimension tables     | Populated Data Warehouse        | High     |
+| S2-18 | Develop SQL queries for operational reporting            | SQL Reporting Queries           | Medium   |
+| S2-19 | Validate warehouse data against source/staging data      | Warehouse Validation Results    | High     |
+| S2-20 | Document data profiling and quality findings             | Data Profiling & Quality Report | High     |
+| S2-21 | Commit Sprint 2 code, SQL and documentation to Git       | Git Commit History              | Medium   |
+| S2-22 | Prepare Sprint 2 demonstration                           | Working Sprint 2 Solution       | Medium   |
+
+## Sprint 2 Deliverables
+
+* Data Profiling Report
+* Data Quality Report
+* Data Quality Rules
+* Cleaned and Standardized Datasets
+* Star Schema
+* Fact and Dimension Table Design
+* PostgreSQL Data Warehouse
+* Pentaho Warehouse ETL Transformations
+* SQL Scripts
+* Warehouse Validation Results
+* Git Repository Updates
+
+---
