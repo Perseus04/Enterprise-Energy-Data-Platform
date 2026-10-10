@@ -437,13 +437,13 @@
   </notepads>
   <connection>
     <name>DE</name>
-    <server>localhost</server>
+    <server>${DB_HOST}</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>Data Engineering</database>
-    <port>5432</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bef2a5d1</password>
+    <database>${DB_NAME}</database>
+    <port>${DB_PORT}</port>
+    <username>${DB_USER}</username>
+    <password>${DB_PASS}</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -462,7 +462,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
+        <attribute>${DB_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -601,7 +601,7 @@
     </partitioning>
     <sourceFromInput>N</sourceFromInput>
     <sourceFieldName/>
-    <filename>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\CIS.xml</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\..\..\datasets\CIS.xml</filename>
     <addResultFile>N</addResultFile>
     <nrRowsToSkip>0</nrRowsToSkip>
     <rowLimit>0</rowLimit>
@@ -743,7 +743,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\OMS_data.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\..\..\datasets\OMS_data.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1427,7 +1427,7 @@
     <schema>public</schema>
     <table>CISData</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -1499,7 +1499,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\asset_maintenance.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\..\..\datasets\asset_maintenance.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1650,7 +1650,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\Billing_payments.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\..\..\datasets\Billing_payments.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -2281,9 +2281,9 @@
     <schema>public</schema>
     <table>omsdata</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
+    <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
@@ -2365,7 +2365,7 @@
     <schema>public</schema>
     <table>iotsmartgrid</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -2778,7 +2778,7 @@
     <includeNulls>N</includeNulls>
     <rownum_field/>
     <file>
-      <name>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\owid-energy-data.json</name>
+      <name>${Internal.Transformation.Filename.Directory}\..\..\datasets\owid-energy-data.json</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -3373,7 +3373,7 @@
     <schema>public</schema>
     <table>renewableenergydata</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -3933,7 +3933,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\iiot_smart_grid_dataset.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\..\..\datasets\iiot_smart_grid_dataset.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -3952,7 +3952,7 @@
         <name>Timestamp</name>
         <type>Date</type>
         <format>yyyy-MM-dd HH:mm:ss</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>-1</length>
@@ -3963,7 +3963,7 @@
         <name>Power_Consumption_kWh</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -3974,7 +3974,7 @@
         <name>Voltage_V</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -3985,7 +3985,7 @@
         <name>Current_A</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -3996,7 +3996,7 @@
         <name>Power_Factor</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -4007,7 +4007,7 @@
         <name>Grid_Frequency_Hz</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -4018,7 +4018,7 @@
         <name>Reactive_Power_kVAR</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>19</length>
@@ -4029,7 +4029,7 @@
         <name>Active_Power_kW</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -4040,7 +4040,7 @@
         <name>Demand_Response_Event</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
@@ -4051,7 +4051,7 @@
         <name>Temperature_C</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>19</length>
@@ -4062,7 +4062,7 @@
         <name>Humidity_%</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -4073,7 +4073,7 @@
         <name>Weather_Condition</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>6</length>
@@ -4084,7 +4084,7 @@
         <name>Solar_Power_Generation_kW</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>20</length>
@@ -4095,7 +4095,7 @@
         <name>Wind_Power_Generation_kW</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>19</length>
@@ -4106,7 +4106,7 @@
         <name>Previous_Day_Consumption_kWh</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -4117,7 +4117,7 @@
         <name>Peak_Load_Hour</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
@@ -4128,7 +4128,7 @@
         <name>Energy_Source_Type</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
@@ -4139,7 +4139,7 @@
         <name>User_Type</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
@@ -4148,9 +4148,9 @@
       </field>
       <field>
         <name>Normalized_Consumption</name>
-        <type>BigNumber</type>
-        <format>0.####################</format>
-        <currency>$</currency>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>21</length>
@@ -4161,7 +4161,7 @@
         <name>Energy_Efficiency_Score</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>Rs.</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>18</length>
@@ -4198,7 +4198,7 @@
     <schema>public</schema>
     <table>energymanagementdata</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -4422,7 +4422,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\Renewable Energy monitoring.xlsx</name>
+      <name>${Internal.Transformation.Filename.Directory}\..\..\datasets\Renewable Energy monitoring.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -6041,7 +6041,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\scada_pipeline.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\..\..\datasets\scada_pipeline.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -6225,7 +6225,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\localuser\Enterprise-Energy-Data-Platform\datasets\smart_meter_data.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}\..\..\datasets\smart_meter_data.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -6327,7 +6327,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
+      <xloc>96</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
