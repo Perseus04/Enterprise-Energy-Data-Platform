@@ -1,0 +1,41 @@
+
+name: EEDP CI
+
+on:
+  push:
+    branches:
+      - subBranch
+
+  pull_request:
+    branches:
+      - subBranch
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run EEDP Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest pandas openpyxl
+
+      - name: Check Python syntax
+        run: python -m compileall -q .
+
+      - name: Run automated tests
+        run: python -m pytest -v

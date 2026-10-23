@@ -6,223 +6,141 @@
 
 ## 2. Project Background
 
-ABC Energy Ltd. is a large power generation and distribution company serving more than 10 million residential, commercial, and industrial consumers.
+ABC Energy Ltd. serves more than 10 million residential, commercial, and industrial consumers. Its operational and business data is generated across multiple independent systems, including smart meters, SCADA, Energy Management Systems (EMS), Customer Information Systems (CIS), billing systems, renewable energy monitoring, asset management, outage management, and IoT-enabled grid sensors.
 
-The organization generates data from multiple independent enterprise systems such as smart meters, SCADA, Energy Management Systems, Customer Information Systems, billing systems, renewable energy monitoring, asset management, outage management systems, and IoT-enabled grid sensors.
-
-Because these systems operate independently, obtaining a unified and reliable view of energy and operational data is difficult. This affects energy monitoring, data-quality management, grid-performance analysis, asset monitoring, outage analysis, and reporting.
-
-The **Enterprise Energy Data Platform (EEDP)** is proposed to provide a centralized platform for integrating, processing, validating, storing, and analyzing enterprise energy and utility data.
+The **Enterprise Energy Data Platform (EEDP)** will integrate data from these heterogeneous sources, improve data reliability, store curated datasets in PostgreSQL, and provide a foundation for energy analytics and reporting.
 
 ## 3. Business Problem
 
-ABC Energy's energy, customer, operational, asset, and grid data is distributed across heterogeneous and independent systems.
+Energy, customer, asset, and grid data is distributed across independent systems. This makes it difficult to obtain a consistent enterprise view, identify data-quality issues, analyze operational performance, reconcile related records, and produce reliable reports.
 
-This creates difficulties in:
+ABC Energy requires a unified data platform that consolidates data from selected sources and makes trusted datasets available for operational and management analytics.
 
-* Obtaining a unified view of enterprise energy data
-* Monitoring electricity consumption
-* Identifying data-quality issues
-* Analyzing transmission and distribution performance
-* Monitoring asset and transformer information
-* Understanding outage patterns
-* Supporting regulatory and operational reporting
-* Providing trusted data for management decision-making
+## 4. Project Objectives
 
-Therefore, ABC Energy requires a centralized data platform that can integrate data from multiple enterprise sources and provide reliable datasets for analytics and reporting.
+The project aims to:
 
-## 4. Project Objective
-
-The primary objective is to **design and implement an enterprise energy data platform** that:
-
-1. Integrates data from multiple heterogeneous enterprise sources.
-2. Cleans, validates, and standardizes the collected data.
-3. Stores curated data in a PostgreSQL data warehouse.
-4. Maintains metadata, audit information, and data lineage.
-5. Provides reliable datasets for energy operations, grid monitoring, customer analytics, and reporting.
-6. Uses Git and GitHub for version control and collaborative development.
-7. Produces the required technical documentation and sprint deliverables.
+1. Ingest data from selected heterogeneous enterprise sources.
+2. Profile, clean, validate, and standardize data.
+3. Store raw and curated data in PostgreSQL staging and warehouse structures.
+4. Design a dimensional data model for analytical queries.
+5. Document metadata, source-to-target mappings, and data lineage.
+6. Use Pentaho Data Integration for ingestion and ETL workflows.
+7. Use Python/Pandas and SQL for data profiling, quality checks, and validation.
+8. Provide analytics and dashboards using Power BI.
+9. Maintain project code and documentation in Git/GitHub.
 
 ## 5. Project Scope
 
-| Area              | Scope                                                  | Tool                     |
-| ----------------- | ------------------------------------------------------ | ------------------------ |
-| Requirements      | Business requirement analysis                          | Markdown / MS Word       |
-| Data Discovery    | Identification and analysis of enterprise data sources | Python / Excel           |
-| Data Dictionary   | Documentation of source fields and attributes          | Excel / Markdown         |
-| Data Ingestion    | Extraction and loading of heterogeneous data           | Pentaho Data Integration |
-| Data Profiling    | Analysis of data structure and quality                 | Python / Pandas          |
-| Data Cleaning     | Data cleansing and validation                          | Python / Pandas, Pentaho |
-| Data Storage      | Staging and data warehouse                             | PostgreSQL               |
-| Data Modelling    | Dimensional/star-schema modelling                      | PostgreSQL               |
-| Data Quality      | Data-quality checks and validation                     | Python / Pandas, SQL     |
-| Metadata          | Metadata documentation and management                  | Markdown / SQL           |
-| Data Lineage      | Source-to-target mapping and lineage documentation     | Markdown                 |
-| ETL Orchestration | ETL workflow development                               | Pentaho Data Integration |
-| Analytics         | Energy and operational dashboards                      | Power BI                 |
-| Version Control   | Source-code and project version control                | Git / GitHub             |
-| Documentation     | Technical and project documentation                    | Markdown / MS Word       |
+The project covers requirements analysis, source discovery, data dictionary preparation, ingestion, data profiling, data cleansing and validation, PostgreSQL staging and warehouse development, dimensional modelling, ETL workflows, metadata and lineage documentation, data reconciliation, Power BI analytics, version control, and technical documentation.
+
+The project is a student implementation of an enterprise-style data platform. The source landscape may include smart meter readings, SCADA logs, EMS, CIS, billing and payment records, renewable-energy monitoring, asset maintenance records, OMS data, IoT grid-sensor data, and transformer-health reports. The specific datasets used will be recorded in the Source Inventory.
 
 ## 6. Stakeholders
 
-| Stakeholder                | Primary Interest                            |
-| -------------------------- | ------------------------------------------- |
-| Grid Operations Team       | Grid monitoring and operational performance |
-| Distribution Team          | Distribution performance and energy data    |
-| Customer Service Team      | Customer and consumption information        |
-| Asset Management Team      | Asset and transformer information           |
-| Regulatory Compliance Team | Reliable regulatory reporting               |
-| Executive Management       | Business insights and decision-making       |
-| Data Engineering Team      | Development and maintenance of EEDP         |
+| Stakeholder | Primary Interest |
+|---|---|
+| Grid Operations Team | Grid monitoring and operational performance |
+| Distribution Team | Distribution performance and energy data |
+| Customer Service Team | Customer and consumption information |
+| Asset Management Team | Asset and transformer information |
+| Regulatory Compliance Team | Reliable reporting and traceability |
+| Executive Management | Business insights and decision-making |
+| Data Engineering Team | Development and maintenance of EEDP |
 
-## 7. Enterprise Data Sources
+## 7. Technology Stack
 
-The identified enterprise data-source landscape includes:
+| Category | Technology | Purpose |
+|---|---|---|
+| ETL and ingestion | Pentaho Data Integration (Spoon) | Ingestion, transformation, and workflow orchestration |
+| Database | PostgreSQL | Staging and data warehouse |
+| Data processing | Python / Pandas | Profiling, quality analysis, and data processing |
+| Querying and validation | SQL | Data validation, reconciliation, and analytical queries |
+| Version control | Git / GitHub | Versioning and collaboration |
+| Reporting | Power BI | Dashboards and analytics |
+| Documentation | Markdown / MS Word | Project and technical documentation |
+| Project management | Agile Scrum | Sprint-based delivery |
 
-1. **Smart Meter Readings**
-2. **SCADA System Logs**
-3. **Energy Management System (EMS)**
-4. **Customer Information System (CIS)**
-5. **Billing & Payment System**
-6. **Renewable Energy Monitoring**
-7. **Asset Maintenance Records**
-8. **Outage Management System (OMS)**
-9. **IoT Grid Sensor Data**
-10. **Transformer Health Reports**
-
-> **Current-stage note:** These represent the identified enterprise data-source landscape. The specific datasets selected for implementation should be finalized in the Sprint 1 Source Inventory.
-
-## 8. Technology Stack
-
-| Category           | Technology                       | Purpose                                           |
-| ------------------ | -------------------------------- | ------------------------------------------------- |
-| ETL                | Pentaho Data Integration (Spoon) | Data ingestion, transformation, and orchestration |
-| Database           | PostgreSQL                       | Staging and data warehouse                        |
-| Programming        | Python                           | Data profiling and data-quality analysis          |
-| Version Control    | Git & GitHub                     | Source-code and project version control           |
-| Reporting          | Power BI                         | Analytics and dashboards                          |
-| Documentation      | Markdown / MS Word               | Technical and project documentation               |
-| Project Management | Agile Scrum                      | Sprint-based project execution                    |
-
-## 9. High-Level Solution Architecture
+## 8. High-Level Solution Architecture
 
 ```text
-Enterprise Data Sources
-        ↓
-Pentaho Data Integration
-        ↓
-Bronze / Raw Data
-        ↓
-Python / Pandas
-        ↓
-Data Profiling & Quality Checks
-        ↓
-Silver / Cleaned Data
-        ↓
-Transformation
-        ↓
-PostgreSQL Data Warehouse
-        ↓
-Gold / Analytics Data
-        ↓
-Power BI Dashboards
+Selected Enterprise Data Sources
+              |
+              v
+   Pentaho Data Integration
+              |
+              v
+      Raw / Staging Data
+              |
+              v
+ Python / Pandas + SQL Checks
+              |
+              v
+     Cleaned / Validated Data
+              |
+              v
+   PostgreSQL Data Warehouse
+              |
+              v
+       Curated Data for BI
+              |
+              v
+      Power BI Dashboards
 ```
 
-Supporting project components:
+Cross-cutting project practices include Git/GitHub version control, documentation, data-quality evidence, metadata, lineage, and testing. The exact implementation sequence and dataset coverage will be refined through the sprint backlogs.
 
-```text
-Git / GitHub
-Metadata
-Data Lineage
-Audit Information
-Documentation
-Testing
-```
+## 9. Sprint Roadmap and Milestones
 
-## 10. Project Milestones
+| Sprint | Name | Main Focus | Expected Deliverables |
+|---|---|---|---|
+| Sprint 0 | Project Initiation & Architecture | Understand the business problem, define requirements and scope, identify stakeholders and sources, plan architecture, and establish the repository | Project Charter, BRD, stakeholder analysis, solution architecture, Git repository and structure, Product Backlog, Sprint Backlog |
+| Sprint 1 | Data Discovery & Ingestion | Analyze selected sources, prepare the data dictionary, ingest supported file/database formats, and land raw data in PostgreSQL staging | Source Inventory, Data Dictionary, Pentaho ingestion transformations, staging tables, ingestion logs and exception handling, Git history |
+| Sprint 2 | Data Profiling & Database / Data Warehouse | Profile data, identify quality issues, standardize records, design the star schema, and populate warehouse tables | Data Profiling Report, Data Quality Report, Star Schema, PostgreSQL Data Warehouse, SQL scripts, Git updates |
+| Sprint 3 | Data Governance, Lineage & Analytics | Document mappings and lineage, prepare a business glossary, orchestrate ETL jobs, reconcile data, and develop dashboards | Source-to-Target Mapping, Data Lineage Documentation, Business Glossary, Pentaho Jobs, reconciliation evidence, Power BI dashboards, final technical documentation and presentation, tagged Git release |
 
-| Milestone         | Description                                                             |
-| ----------------- | ----------------------------------------------------------------------- |
-| **Sprint 0**      | Project initiation, business requirements, scope, and architecture      |
-| **Sprint 1**      | Data discovery, source analysis, and initial ingestion                  |
-| **Sprint 2**      | Data profiling, quality, transformation, and data warehouse development |
-| **Sprint 3**      | Governance, lineage, orchestration, and analytics                       |
-| **Final Release** | Final documentation, presentation, and Git release                      |
+## 10. Major Deliverables Across the Project
 
-## 11. Current Project Status
+- Business Requirement Document and Project Charter
+- Stakeholder analysis and solution architecture
+- GitHub repository and project directory structure
+- Source Inventory and Data Dictionary
+- Pentaho ingestion and transformation workflows
+- PostgreSQL staging database and data warehouse
+- Data Profiling and Data Quality Reports
+- Star-schema design and SQL validation scripts
+- Source-to-Target Mapping and Data Lineage documentation
+- Business Glossary and reconciliation evidence
+- Power BI dashboards
+- Technical documentation, sprint presentations, and final Git release
 
-**Current Phase:** Sprint 0 and Sprint 1
-
-### Current Priorities
-
-* Finalize business requirements
-* Finalize project scope
-* Identify and finalize selected data sources
-* Prepare the Source Inventory
-* Finalize the solution architecture
-* Establish the GitHub repository
-* Establish the project directory structure
-* Prepare the data dictionary
-* Configure the PostgreSQL environment
-* Begin initial Pentaho ingestion pipelines
-
-## 12. Major Deliverables
-
-### Sprint 0
-
-* Project Charter
-* Business Requirement Document
-* Stakeholder Analysis
-* Project Scope
-* Source Inventory
-* Solution Architecture
-* GitHub Repository
-* Repository Structure
-* Product Backlog
-* Sprint Backlog
-
-### Sprint 1
-
-* Source-System Analysis
-* Data Dictionary
-* Initial Pentaho ETL Transformations
-* PostgreSQL Staging Database
-* Ingestion Logging
-* Exception Handling
-* Git Commit History
-
-## 13. Success Criteria
+## 11. Success Criteria
 
 The project will be considered successful when:
 
-* Selected enterprise data sources can be ingested successfully.
-* ETL pipelines execute successfully.
-* Data-quality checks are implemented and documented.
-* PostgreSQL staging and warehouse tables are populated correctly.
-* Source-to-target mappings are documented.
-* Data lineage is documented.
-* Version control is maintained through Git/GitHub.
-* Required technical documentation is complete.
-* Curated datasets are available for analytics.
-* Power BI dashboards provide useful energy and operational insights.
+- Selected data sources are documented and ingested successfully.
+- Required Pentaho workflows execute and handle failures visibly.
+- PostgreSQL staging and warehouse tables contain the expected data.
+- Data profiling and quality checks are performed and documented.
+- Dimensional tables support the intended analytical queries.
+- Source-to-target mappings and lineage are documented.
+- Meter, billing, and asset reconciliation checks are performed where applicable to the selected datasets.
+- Power BI dashboards present useful energy and operational insights.
+- Code, transformations, SQL, and documentation are version-controlled.
+- Each sprint produces its agreed deliverables and a demonstrable increment.
 
-## 14. Project Constraints
+## 12. Project Constraints and Assumptions
 
-* The project follows an Agile sprint-based development approach.
-* The implementation must use the defined project technology stack.
-* Enterprise data sources need to be represented using suitable datasets.
-* The project should demonstrate an end-to-end data engineering solution.
-* Each sprint should produce a demonstrable working increment.
+- Delivery follows the project’s defined Agile sprint roadmap.
+- The implementation uses Pentaho Data Integration, Python/Pandas, PostgreSQL, Power BI, and Git/GitHub.
+- Dataset selection and availability determine which source formats and business scenarios can be demonstrated.
+- The solution is an enterprise-style student implementation, not a live production utility control system.
+- Deliverables and completion status reflect work actually implemented.
 
-## 15. Definition of Done
+## 13. Definition of Done
 
-A sprint is considered complete when:
+A sprint is complete when its agreed backlog items meet their acceptance criteria, relevant pipelines or scripts have been tested, data-quality and validation results are recorded where applicable, code and project files are committed to Git, documentation is updated, and the sprint increment is ready to demonstrate.
 
-* [ ] Defined sprint requirements are addressed.
-* [ ] Required ETL pipelines execute successfully.
-* [ ] Data-quality checks are documented.
-* [ ] PostgreSQL tables are populated correctly.
-* [ ] Source-to-target mappings are updated.
-* [ ] Code and project files are committed to Git.
-* [ ] Documentation is completed.
-* [ ] Sprint review presentation is prepared/delivered.
+## 14. Project Governance
+
+The Project Charter establishes the overall direction and boundaries of EEDP. The Product Backlog contains the full prioritized project work, while each Sprint Backlog identifies the work planned for that sprint. Sprint progress and completion status should be updated as implementation proceeds.
