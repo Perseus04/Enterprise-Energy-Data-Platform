@@ -1,14 +1,3 @@
-DROP TABLE Smart_meter;
-DROP TABLE scada_pipeline;
-DROP TABLE omsdata;
-DROP TABLE iotsmartgrid;
-DROP TABLE billing_payment;
-DROP TABLE assetmaintainence;
-DROP TABLE renewableenergydata;
-DROP TABLE energymanagementdata;
-DROP TABLE CISData;
-
-
 CREATE TABLE "public".Smart_meter
 (
   "Timestamp" TIMESTAMP
@@ -41,16 +30,16 @@ CREATE TABLE "public".scada_pipeline
 
 CREATE TABLE "public".omsdata
 (
-  "Event Description" VARCHAR(500)
+  "Event Description" VARCHAR(100)
 , "Year" BIGINT
 , "Date Event Began" TEXT
 , "Date of Restoration" TIMESTAMP
-, "Time of Restoration" VARCHAR(100)
-, Respondent VARCHAR(500)
-, "Geographic Areas" VARCHAR(500)
-, "NERC Region" VARCHAR(100)
-, "Number of Customers Affected" VARCHAR(100)
-, Tags VARCHAR(500)
+, "Time of Restoration" VARCHAR(8)
+, Respondent VARCHAR(55)
+, "Geographic Areas" VARCHAR(42)
+, "NERC Region" VARCHAR(5)
+, "Number of Customers Affected" VARCHAR(9)
+, Tags VARCHAR(34)
 )
 ;
 
@@ -74,7 +63,7 @@ CREATE TABLE "public".iotsmartgrid
 , Peak_Load_Hour BIGINT
 , Energy_Source_Type BIGINT
 , User_Type BIGINT
-, Normalized_Consumption VARCHAR(60)--NUMERIC(400, 190)
+, Normalized_Consumption NUMERIC(40, 19)
 , Energy_Efficiency_Score NUMERIC(33, 15)
 )
 ;
@@ -82,58 +71,58 @@ CREATE TABLE "public".iotsmartgrid
 CREATE TABLE "public".billing_payment
 (
   "Utility.Number" BIGINT
-, "Utility.Name" VARCHAR(100)
-, "Utility.State" VARCHAR(20)
-, "Utility.Type" VARCHAR(50)
-, "Demand.Summer Peak" NUMERIC(80, 10)
-, "Demand.Winter Peak" NUMERIC(80, 10)
-, "Sources.Generation" NUMERIC(110, 10)
-, "Sources.Purchased" NUMERIC(110, 10)
-, "Sources.Other" NUMERIC(90, 10)
-, "Sources.Total" NUMERIC(110, 10)
-, "Uses.Retail" NUMERIC(110, 10)
-, "Uses.Resale" NUMERIC(100, 10)
-, "Uses.No Charge" NUMERIC(70, 10)
-, "Uses.Consumed" NUMERIC(90, 10)
-, "Uses.Losses" NUMERIC(100, 10)
-, "Uses.Total" NUMERIC(110, 10)
-, "Revenues.Retail" NUMERIC(100, 10)
-, "Revenue.Delivery" NUMERIC(70, 10)
-, "Revenue.Resale" NUMERIC(90, 10)
-, "Revenue.Adjustments" NUMERIC(90, 10)
-, "Revenue.Transmission" NUMERIC(90, 10)
-, "Revenue.Other" NUMERIC(90, 10)
-, "Revenue.Total" NUMERIC(100, 10)
-, "Retail.Residential.Revenue" NUMERIC(300, 120)
-, "Retail.Residential.Sales" NUMERIC(110, 10)
-, "Retail.Residential.Customers" NUMERIC(100, 10)
-, "Retail.Commercial.Revenue" NUMERIC(290, 120)
-, "Retail.Commercial.Sales" NUMERIC(110, 10)
-, "Retail.Commercial.Customers" NUMERIC(90, 10)
-, "Retail.Industrial.Revenue" NUMERIC(290, 110)
-, "Retail.Industrial.Sales" NUMERIC(110, 10)
-, "Retail.Industrial.Customers" NUMERIC(80, 10)
-, "Retail.Transportation.Revenue" NUMERIC(50, 10)
-, "Retail.Transportation.Sales" NUMERIC(60, 10)
-, "Retail.Transportation.Customers" NUMERIC(40, 10)
-, "Retail.Total.Revenue" NUMERIC(100, 10)
-, "Retail.Total.Sales" NUMERIC(110, 10)
-, "Retail.Total.Customers" NUMERIC(100, 10)
+, "Utility.Name" VARCHAR(37)
+, "Utility.State" VARCHAR(2)
+, "Utility.Type" VARCHAR(21)
+, "Demand.Summer Peak" NUMERIC(8, 1)
+, "Demand.Winter Peak" NUMERIC(8, 1)
+, "Sources.Generation" NUMERIC(11, 1)
+, "Sources.Purchased" NUMERIC(11, 1)
+, "Sources.Other" NUMERIC(9, 1)
+, "Sources.Total" NUMERIC(11, 1)
+, "Uses.Retail" NUMERIC(11, 1)
+, "Uses.Resale" NUMERIC(10, 1)
+, "Uses.No Charge" NUMERIC(7, 1)
+, "Uses.Consumed" NUMERIC(9, 1)
+, "Uses.Losses" NUMERIC(10, 1)
+, "Uses.Total" NUMERIC(11, 1)
+, "Revenues.Retail" NUMERIC(10, 1)
+, "Revenue.Delivery" NUMERIC(7, 1)
+, "Revenue.Resale" NUMERIC(9, 1)
+, "Revenue.Adjustments" NUMERIC(9, 1)
+, "Revenue.Transmission" NUMERIC(9, 1)
+, "Revenue.Other" NUMERIC(9, 1)
+, "Revenue.Total" NUMERIC(10, 1)
+, "Retail.Residential.Revenue" NUMERIC(30, 12)
+, "Retail.Residential.Sales" NUMERIC(11, 1)
+, "Retail.Residential.Customers" NUMERIC(10, 1)
+, "Retail.Commercial.Revenue" NUMERIC(29, 12)
+, "Retail.Commercial.Sales" NUMERIC(11, 1)
+, "Retail.Commercial.Customers" NUMERIC(9, 1)
+, "Retail.Industrial.Revenue" NUMERIC(29, 11)
+, "Retail.Industrial.Sales" NUMERIC(11, 1)
+, "Retail.Industrial.Customers" NUMERIC(8, 1)
+, "Retail.Transportation.Revenue" NUMERIC(5, 1)
+, "Retail.Transportation.Sales" NUMERIC(6, 1)
+, "Retail.Transportation.Customers" NUMERIC(4, 1)
+, "Retail.Total.Revenue" NUMERIC(10, 1)
+, "Retail.Total.Sales" NUMERIC(11, 1)
+, "Retail.Total.Customers" NUMERIC(10, 1)
 )
 ;
 
 CREATE TABLE "public".assetmaintainence
 (
   ï»¿UDI BIGINT
-, "Product ID" VARCHAR(100)
-, "Type" VARCHAR(10)
+, "Product ID" VARCHAR(6)
+, "Type" VARCHAR(1)
 , "Air temperature [K]" NUMERIC(6, 1)
 , "Process temperature [K]" NUMERIC(6, 1)
 , "Rotational speed [rpm]" BIGINT
 , "Torque [Nm]" NUMERIC(5, 1)
 , "Tool wear [min]" BIGINT
 , Target BIGINT
-, "Failure Type" VARCHAR(100)
+, "Failure Type" VARCHAR(17)
 )
 ;
 
